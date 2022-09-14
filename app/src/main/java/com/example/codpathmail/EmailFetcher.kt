@@ -5,7 +5,7 @@ import android.util.Log
 class EmailFetcher {
     companion object {
         val senders = listOf("Dahlia Cline", "Kevin Miranda", "Kaya Austin", "Laila Calderon", "Marquise Rhodes", "Fletcher Patel", "Luz Barron", "Kamren Dudley", "Jairo Foster", "Lilah Sandoval", "Ansley Blake", "Slade Sawyer", "Jaelyn Holmes", "Phoenix Bright", "Ernesto Gould")
-        val title = "Welcome to Kotlin!"
+        val title = "Welcome to Kotlin!" // Edit to create a list of titles/summaries later on in order to have varieties
         val summary = "Welcome to the Android Kotlin Course! We're excited to have you join us and learn how to develop Android apps using Kotlin. Here are some tips to get started."
         fun getEmails(): MutableList<Email> {
             var emails : MutableList<Email> = ArrayList()

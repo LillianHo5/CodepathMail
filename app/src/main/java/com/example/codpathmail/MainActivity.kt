@@ -2,9 +2,11 @@ package com.example.codpathmail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.codpathmail.EmailFetcher.Companion.getEmails
+import com.example.codpathmail.EmailFetcher.Companion.getNext5Emails
 
 class MainActivity : AppCompatActivity() {
     lateinit var emails: List<Email>
@@ -22,6 +24,15 @@ class MainActivity : AppCompatActivity() {
         emailsRv.adapter = emailAdapter
         // Set layout manager to position the items
         emailsRv.layoutManager = LinearLayoutManager(this)
+
+        findViewById<Button>(R.id.load_button).setOnClickListener {
+            // Fetch next 5 emails
+            var newEmails = getNext5Emails()
+            // Add new emails to existing list of emails
+            (emails as MutableList<Email>).addAll(newEmails)
+            // Notify the adapter there's new emails so the RecyclerView layout is updated
+            emailAdapter.notifyDataSetChanged()
+        }
     }
 }
 
