@@ -1,1 +1,1 @@
-# CodpathMail
+# CodepathMail
